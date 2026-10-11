@@ -28,7 +28,11 @@
 
 ## Навигация
 
-- [План и распределение работы](research/PLAN.md)
+- [Правила работы EDI](CLAUDE.md)
+- [Операционная спецификация части IA](spec.md)
+- [План работ части IA](Plan_global.md)
+- [План и распределение работы](research/Plan_research.md)
+- [Архив источников](sources/README.md)
 - [Реестр источников](research/SOURCES.md)
 - [Карточки судебных дел](research/CASES.md)
 - [Соглашения и правила платформ](research/PLATFORM_TERMS.md)
