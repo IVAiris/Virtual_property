@@ -5,6 +5,8 @@
 sources/*
 !sources/README.md
 !sources/N-*/
+# Из N-* публикуется только text.md; HTML-страница справочной системы — локально.
+sources/N-*/*.html
 
 # Системные и рабочие файлы
 .DS_Store
