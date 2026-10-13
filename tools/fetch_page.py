@@ -23,6 +23,7 @@ from playwright.sync_api import sync_playwright
 
 SOURCES = pathlib.Path(__file__).resolve().parent.parent / "sources"
 TIMEOUT = 40_000   # мс на загрузку страницы
+SETTLE = 5_000     # мс на отрисовку скриптами после загрузки основного содержимого
 
 
 def fetch(source_id, url):
@@ -37,7 +38,9 @@ def fetch(source_id, url):
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
-        response = page.goto(url, timeout=TIMEOUT, wait_until="networkidle")
+        # Не "networkidle": часть сайтов держит соединения открытыми постоянно (сбой S-48).
+        response = page.goto(url, timeout=TIMEOUT, wait_until="domcontentloaded")
+        page.wait_for_timeout(SETTLE)
         status = response.status if response else "нет ответа"
         html = page.content()
         browser.close()
