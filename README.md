@@ -32,6 +32,7 @@
 - [Правила работы EDI](CLAUDE.md)
 - [Операционная спецификация части IA](spec.md)
 - [План работ части IA](Plan_global.md)
+- [Микропланы и результаты шагов](steps/)
 - [План и распределение работы](research/Plan_research.md)
 - [Архив источников](sources/README.md)
 - [Реестр источников](research/SOURCES.md)
